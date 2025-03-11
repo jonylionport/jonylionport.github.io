@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J's Hub - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="home-container">
+        <nav class="home-nav">
+            <div class="nav-logo">
+                <img src="imgs/logo_large.png" height="45px" width="45px" style="border-radius: 25px;">
+            </div>
+            <div class="nav-buttons">
+                <button onclick="window.location.href='liveries.html'" class="nav-btn">
+                    <i class="fas fa-car"></i>
+                    Browse Liveries
+                </button>
+                <button onclick="window.location.href='https://jonylionhub.github.io/'" class="nav-btn">
+                    <i class="fas fa-user"></i>
+                    Portfolio 
+                </button>
+                <button onclick="showDonationModal()" class="nav-btn donate">
+                    <i class="fas fa-heart"></i>
+                    Support
+                </button>
+                <button class="nav-btn theme-toggle" id="themeToggle" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+
+        <main class="home-content">
+            <div class="hero-section">
+                <h2>Welcome to <span>J's Hub</span></h2>
+                <p>Your one-stop destination for high-quality, <span>free</span> vehicle liveries.</p>
+            </div>
+            <div class="main-content-grid">
+                <div class="features-grid">
+                    <div class="feature">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>High-Quality Designs</h3>
+                        <p>Professional and detailed liveries for your vehicles</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Easy Installation</h3>
+                        <p>Simple copy-paste codes for quick setup</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-sync-alt"></i>
+                        <h3>Regular Updates</h3>
+                        <p>New designs added frequently</p>
+                    </div>
+                </div>
+                <div class="community-section">
+                    <div class="discord-widget">
+                        <h3>Join Our Community!</h3>
+                        <iframe 
+                            src="https://discord.com/widget?id=839987411735019551&theme=dark" 
+                            width="350" 
+                            height="500" 
+                            allowtransparency="true" 
+                            frameborder="0" 
+                            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+                        </iframe>
+                        <p style="color: grey; font-style: italic; margin-top: 13px;">Need something specific? We do private commisions!</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Donation Modal -->
+    <div id="donationModal" class="donation-modal">
+        <div class="donation-content">
+            <button class="close-modal" onclick="closeDonationModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2>Form of Donation</h2>
+            <div class="donation-options">
+                <button class="donation-option" onclick="window.open('https://buymeacoffee.com/jonylion', '_blank')">
+                    <i class="fas fa-mug-hot"></i>
+                    <span>Buy Me a Coffee</span>
+                </button>
+                <button class="donation-option" onclick="window.open('https://www.roblox.com/catalog/11260271193/Js-Hub-Small-Donation', '_blank')">
+                    <span class="amount">R$100</span>
+                    <span>Small Donation</span>
+                </button>
+                <button class="donation-option" onclick="window.open('https://www.roblox.com/catalog/13714547271/Js-Hub-Medium-Donation', '_blank')">
+                    <span class="amount">R$250</span>
+                    <span>Medium Donation</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="theme.js"></script>
+    <script src="mobile.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 

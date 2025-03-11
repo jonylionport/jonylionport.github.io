@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J's Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- announcement -->
+    <div class="announcement-banner" id="announcementBanner">
+        <div class="announcement-content">
+            <i class="fas fa-info-circle"></i>
+            <p>Welcome to J's Hub! All liveries are free to use. I'd appreciate if you credited this site when using my liveries!</p>
+        </div>
+        <button class="close-announcement" id="closeAnnouncement">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <button class="tab-btn home-btn" onclick="window.location.href='index.html'" title="Home">
+                <i class="fas fa-home"></i>
+            </button>
+            <button class="tab-btn active" data-category="all">
+                <i class="fas fa-border-all"></i>
+            </button>
+            <button class="tab-btn" data-category="sedan">
+                <i class="fas fa-car"></i>
+            </button>
+            <button class="tab-btn" data-category="suv">
+                <i class="fas fa-car-side"></i>
+            </button>
+            <button class="tab-btn" data-category="truck">
+                <i class="fas fa-truck-pickup"></i>
+            </button>
+            <button class="tab-btn" data-category="other">
+                <i class="fas fa-ellipsis-h"></i>
+            </button>
+            <button class="donate-btn" onclick="showDonationModal()" title="Support my work">
+                <i class="fas fa-hand-holding-heart"></i>
+            </button>
+            <button class="discord-btn" onclick="window.open('https://discord.gg/J8pBfXjqbD', '_blank')" title="Join our Discord">
+                <i class="fab fa-discord"></i>
+            </button>
+            <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content">
+            <header>
+                <h1>Jonylion's free liveries</h1>
+                <p class="package-update">Showing <span id="itemupdate">0</span> vehicles</p>
+            </header>
+
+            <!-- Add this after the header section -->
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search vehicles...">
+                    <button class="clear-search" id="clearSearch">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid Container -->
+            <div class="grid" id="packageGrid">
+                <!-- Packages will be added here dynamically -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Package Template -->
+    <template id="packageTemplate">
+        <div class="package-card">
+            <div class="package-image">
+                <img src="" alt="Car Package">
+            </div>
+            <div class="package-info">
+                <h3 class="package-title"></h3>
+                <p class="package-update"></p>
+                <button class="get-btn">
+                    <i class="fas fa-key"></i> Get
+                </button>
+            </div>
+        </div>
+    </template>
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img src="" alt="Package Preview">
+                </div>
+                <div class="modal-info">
+                    <div class="modal-header">
+                        <h2 class="modal-title"></h2>
+                        <span class="modal-update"></span>
+                    </div>
+                    <div class="modal-description"></div>
+                    <div class="codes-section">
+                        <h3>Access Codes</h3>
+                        <div class="codes-grid">
+                            <div class="code-item">
+                                <span>Left 1:</span>
+                                <div class="code-container">
+                                    <code class="code-text"></code>
+                                    <button class="copy-btn" title="Copy code">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="code-item">
+                                <span>Left 2:</span>
+                                <div class="code-container">
+                                    <code class="code-text"></code>
+                                    <button class="copy-btn" title="Copy code">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Donation Modal -->
+    <div id="donationModal" class="donation-modal">
+        <div class="donation-content">
+            <button class="close-modal" onclick="closeDonationModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2>Form of Donation</h2>
+            <div class="donation-options">
+                <button class="donation-option" onclick="window.open('https://buymeacoffee.com/jonylion', '_blank')">
+                    <i class="fas fa-mug-hot"></i>
+                    <span>Buy Me a Coffee</span>
+                </button>
+                <button class="donation-option" onclick="window.open('https://www.roblox.com/catalog/11260271193/Js-Hub-Small-Donation', '_blank')">
+                    <span class="amount">R$100</span>
+                    <span>Small Donation</span>
+                </button>
+                <button class="donation-option" onclick="window.open('https://www.roblox.com/catalog/13714547271/Js-Hub-Medium-Donation', '_blank')">
+                    <span class="amount">R$250</span>
+                    <span>Medium Donation</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="theme.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
