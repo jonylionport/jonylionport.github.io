@@ -326,6 +326,7 @@
   .current-projects{
     margin-top: 50px;
     color: white;
+    
   }
   .projects{
     animation: slide 2s infinite;
@@ -446,6 +447,7 @@
   .education-work {
     /* margin-top: 50px; */
     padding: 20px;
+    margin-top: 50px;
     border: 1px solid var(--light-grey);
     border-radius: 15px;
     animation: fadeIn 0.5s ease-out;
